@@ -1,0 +1,21 @@
+<div class="container" style="margin-bottom: 30px; margin-top: 60px;">
+<%= render 'articles/jumbotron' %>
+</div>
+<div class="container" style="margin: 40px; padding: 10px;">
+<h1 style="text-align: center; font-size: 50px; font-style: italic">Articles</h1>
+<hr>
+  <div class="container" style="margin: 30px; padding: 10px;">
+<ul>
+  <% @articles.each do |article| %>
+  <li><h3><%= article.title %></h3><h4><%= link_to "view", article_path(article) %></h4><hr></li>
+  <% end %>
+</ul></div>
+</div>
+<!--Footer -->
+<footer id="sticky-footer" class="flex-shrink-0 py-4">
+  <div class="container text-center">
+    <small>Copyright &copy; Daniyal Malik 2022</small><br>
+    <small>Designed by Daniyal Malik &copy; XproLabs</small>
+  </div>
+</footer>
+</body>

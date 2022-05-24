@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AlphaBlog</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <!--Navbar-->
+<%= render 'layouts/navigation' %>
+<div class="container" style="color: greenyellow; font-size: 20px; margin: 30px;">
+  <% flash.each do |name,msg| %>
+  <%= msg %>
+  <% end %>
+</div>
+    <%= yield %>
+  </body>
+</html>

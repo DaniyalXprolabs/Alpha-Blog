@@ -1,0 +1,15 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.jumbotron{
+  background-image: asset_url('jum.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 425px;
+}
+#sticky-footer{
+  background-color: black;
+  color: whitesmoke;
+  font-size: 20px;
+}

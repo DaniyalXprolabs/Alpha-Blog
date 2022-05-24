@@ -1,0 +1,10 @@
+<div class="container" style="margin: 30px; padding: 20px;">
+<h4>Title: <%= @article.title %></h4>
+<h5>Description: <%= @article.description %></h5>
+<h6>Created at: <%= @article.created_at %></h6>
+<br>
+<%= link_to "Edit the Article", edit_article_path %>   |   <%= link_to "Delete the Article",  article_path(@article), method: :delete, data:{confirm:"Are you sure"} %>
+<br>
+<br>
+<%= link_to "Back to home", root_path %>
+</div>
