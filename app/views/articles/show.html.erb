@@ -1,10 +1,10 @@
 <div class="container" style="margin: 30px; padding: 20px;">
-<h4>Title: <%= @article.title %></h4>
-<h5>Description: <%= @article.description %></h5>
-<h6>Created at: <%= @article.created_at %></h6>
+<h6>Title: <%= @article.title %></h6>
+<p>Description: <%= @article.description %></p>
+<p>Created at: <%= @article.created_at %></p>
 <br>
-<%= link_to "Edit the Article", edit_article_path %>   |   <%= link_to "Delete the Article",  article_path(@article), method: :delete, data:{confirm:"Are you sure"} %>
+<%= link_to "Edit the Article", edit_article_path, class: "btn btn-warning" %>      <%= link_to "Delete the Article",  article_path(@article), method: :delete, data:{confirm:"Are you sure"}, class: "btn btn-danger" %>
 <br>
 <br>
-<%= link_to "Back to home", root_path %>
+<%= link_to "Back to home", root_path, class: "btn btn-info" %>
 </div>

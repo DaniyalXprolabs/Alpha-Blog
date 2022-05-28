@@ -14,3 +14,12 @@
  *= require_self
  *
  */
+#logo{
+    margin: 20px; font-size: 30px;
+}
+
+.nav-link{
+    margin: 15px;
+    font-family: "Bitstream Charter";
+    font-size: 20px;
+}

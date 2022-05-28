@@ -1,3 +1,4 @@
+<div class="container text-center" style="margin-bottom:40px;border: 3px solid black; border-radius: 10px; width: 600px;  margin-top: 40px; padding-bottom: 30px; padding-top: 30px;">
 <% if @article.errors.any? %>
   <ol>
     <h2>The Following errors prevented the article from being saved</h2>
@@ -6,17 +7,18 @@
     <% end %>
   </ol>
 <% end %>
-<hr>
 <%= form_with(model: @article, local: true) do |f| %>
   <div>
-    <%= f.label :title %><br><br>
-    <%= f.text_field :title %>
+    <h5>
+    <%= f.label :title, class:"form-label" %><br></h5>
+    <%= f.text_field :title, class:"form-control", placeholder:"Enter the Title here" %>
   </div>
   <div><br>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <h5><%= f.label :description,  class:"form-label" %><br></h5>
+    <%= f.text_area :description, class:"form-control form-control-lg", placeholder:"Enter the Description here" %>
   </div>
   <div><br>
-    <%= f.submit %>
+    <%= f.submit class:"btn btn-success text-white" %>
   </div>
 <% end %>
+</div>

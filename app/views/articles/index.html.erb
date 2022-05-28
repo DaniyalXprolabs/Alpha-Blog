@@ -3,13 +3,22 @@
 </div>
 <div class="container" style="margin: 40px; padding: 10px;">
 <h1 style="text-align: center; font-size: 50px; font-style: italic">Articles</h1>
-<hr>
   <div class="container" style="margin: 30px; padding: 10px;">
-<ul>
   <% @articles.each do |article| %>
-  <li><h3><%= article.title %></h3><h4><%= link_to "view", article_path(article) %></h4><hr></li>
-  <% end %>
-</ul></div>
+
+    <!--Card -->
+      <div class="card">
+        <div class="card-header">
+          <%= article.created_at %> created by <%= article.user.username %>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <p class="card-text"><%= article.description %></p>
+          <%= link_to "View Detail", article_path(article), class: "btn btn-primary"  %>
+        </div>
+      </div>
+   <% end %>
+</div>
 </div>
 <!--Footer -->
 <footer id="sticky-footer" class="flex-shrink-0 py-4">
