@@ -1,0 +1,28 @@
+<div class="container text-center" style="margin-bottom:40px;border: 3px solid black; border-radius: 10px; width: 600px;  margin-top: 40px; padding-bottom: 30px; padding-top: 30px;">
+  <% if @user.errors.any? %>
+    <ol>
+      <h2>The Following errors prevented the article from being saved</h2>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ol>
+  <% end %>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <div>
+      <h5>
+        <%= f.label :username, class:"form-label" %><br></h5>
+      <%= f.text_field :username, class:"form-control", placeholder:"Enter your name here" %>
+    </div>
+    <div><br>
+      <h5><%= f.label :email,  class:"form-label" %><br></h5>
+      <%= f.email_field :email, class:"form-control form-control-lg", placeholder:"dwitter@example.com" %>
+    </div>
+    <div><br>
+      <h5><%= f.label :Password,  class:"form-label" %><br></h5>
+      <%= f.password_field :password, class:"form-control form-control-lg", placeholder:"Enter your password here" %>
+    </div>
+    <div><br>
+      <%= f.submit(@user.new_record? ? "Create Account" : "Update Account", class:"btn btn-success text-white") %>
+    </div>
+  <% end %>
+</div>
