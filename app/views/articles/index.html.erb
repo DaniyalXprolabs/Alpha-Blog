@@ -9,7 +9,7 @@
     <!--Card -->
       <div class="card">
         <div class="card-header">
-          <%= article.created_at %> created by <%= article.user.username %>
+          <%= article.created_at %> created by <%= link_to article.user.username, user_path(article.user) %>
         </div>
         <div class="card-body">
           <h5 class="card-title"><%= article.title %></h5>
