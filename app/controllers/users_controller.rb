@@ -2,6 +2,11 @@ class UsersController < ApplicationController
 
   before_action :get_user_id, only: [:show,:destroy, :edit,:update]
 
+  def index
+    #@users=User.all.order(id: :asc)
+    @users=User.paginate(page: params[:page], per_page:3).order(id: :asc)
+  end
+
   def new
     @user=User.new
   end

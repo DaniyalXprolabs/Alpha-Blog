@@ -3,6 +3,9 @@
 </div>
 <div class="container" style="margin: 40px; padding: 10px;">
 <h1 style="text-align: center; font-size: 50px; font-style: italic">Articles</h1>
+  <div class="flickr_pagination">
+    <%= will_paginate @articles, :container => false %>
+  </div>
   <div class="container" style="margin: 30px; padding: 10px;">
   <% @articles.each do |article| %>
 
@@ -18,8 +21,12 @@
         </div>
       </div>
    <% end %>
+    <div class="flickr_pagination">
+      <%= will_paginate @articles, :container => false %>
+    </div>
+  </div>
 </div>
-</div>
+
 <!--Footer -->
 <footer id="sticky-footer" class="flex-shrink-0 py-4">
   <div class="container text-center">

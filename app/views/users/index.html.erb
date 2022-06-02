@@ -1,0 +1,22 @@
+<div class="container ">
+<h1 class="text-center">Number of Bloggers we have <%= @users.count %></h1>
+  <hr>
+  <div class="flickr_pagination">
+    <%= will_paginate @users, :container => false %>
+  </div>
+  <% @users.each do |user| %>
+    <div class="card " style="width: 18rem;">
+      <%= gravatar_for user, size:200%>
+      <div class="card-body">
+        <h5 class="card-title"><%= user.username %></h5>
+        <p class="card-text"><%= user.email %></p>
+        <p class="card-text">Number of Articles Published:<%= user.articles.count %></p>
+         <p class="card-text">Joined: <%= user.created_at %></p>
+         <%= link_to "View Profile", user_path(user), class:"btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+  <div class="flickr_pagination">
+    <%= will_paginate @users, :container => false %>
+  </div>
+</div>
