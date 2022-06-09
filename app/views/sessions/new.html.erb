@@ -1,1 +1,15 @@
-<h1 class="text-center mt-4">You are on Login Page</h1>
+<div class="container text-center" style="margin-bottom:40px;border: 3px solid black; border-radius: 10px; width: 600px;  margin-top: 40px; padding-bottom: 30px; padding-top: 30px;">
+  <%= form_with(scope: :session,url:login_path , local: true) do |f| %>
+    <div><br>
+      <h5><%= f.label :email,  class:"form-label" %><br></h5>
+      <%= f.email_field :email, class:"form-control form-control-lg", placeholder:"dwitter@example.com" %>
+    </div>
+    <div><br>
+      <h5><%= f.label :Password,  class:"form-label" %><br></h5>
+      <%= f.password_field :password, class:"form-control form-control-lg", placeholder:"Enter your password here" %>
+    </div>
+    <div><br>
+      <%= f.submit  "Login" , class:"btn btn-success text-white" %>
+    </div>
+  <% end %>
+</div>
